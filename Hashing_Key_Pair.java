@@ -1,12 +1,11 @@
 import java.util.Scanner;
-public class KeyPair {
+public class Hashing_Key_Pair {
     static boolean test(int a[],int n,int s){
         boolean d=false;
         int c=0;
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
-                if(i==j)
-                {
+                if(i==j){
                     continue;
                 }
                 else{

@@ -4,7 +4,6 @@ public class Hashing_Subarrays_with_sum_K {
         int s=0;
         int c=0;
         for(int i=0;i<N-1;i++){
-            
             for(int j=i;j<N;j++){
                 s=s+Arr[i]+Arr[j];
             }

@@ -1,31 +1,48 @@
 import java .util.*;
+import javafx.util.Pair;  
+
 public class Searching_Left_most_and_right_most_index {
-    static void indexes(int v[], int x){
+    static void indexes(long v[], long x){
+
         int upperi=0;
-        int loweri=v.length-1;
-        for(int i=0;i<v.length;i++){
+        int l=v.length;
+        int loweri=0;
+        for(int i=0;i<l;i++){
             if(v[i]==x){
-                if(i>upperi){
+                if(i>=upperi){
                     upperi=i;
                 }
-                else if(loweri>i){
-                    loweri=i;
-                }
+            }
+            else{
+                upperi=-1;
+            }
+
+        }
+        
+        for(int i=0;i<l;i++){
+            if(v[i]==x){
+                loweri=i;
+                break;
+            }
+            else{
+                loweri=-1;
             }
         }
+        long nl=loweri;
+        long nu=upperi;
+
+        Pair<Long, Long> p=new Pair<>(nl,nu);
+
         System.out.println(upperi+" "+loweri);
-    }
-    {
-        // Your code goes here
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int l=sc.nextInt();
-        int a[]=new int[l];
+        long a[]=new long[l];
         for(int i=0;i<l;i++){
-            a[i]=sc.nextInt();
+            a[i]=sc.nextLong();
         }
-        int x=sc.nextInt();
+        long x=sc.nextLong();
         indexes(a, x);
     }
 }

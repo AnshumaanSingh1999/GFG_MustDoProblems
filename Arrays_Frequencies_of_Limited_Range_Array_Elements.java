@@ -1,22 +1,19 @@
 import java.util.Scanner;
-import java.util.Iterator;
 import java.util.ArrayList;
 public class Arrays_Frequencies_of_Limited_Range_Array_Elements {
     static void frequencyCount(int arr[], int N, int P){
-        int counter;
-        ArrayList<Integer> a=new ArrayList<>();
+        ArrayList<Integer> s=new ArrayList<>();
         for(int i=1;i<=P;i++){
-            counter=0;
+            int c=0;
             for(int j=0;j<N;j++){
-                if(i==arr[j]){
-                    counter++;
+                if(arr[j]==i){
+                    c++;
                 }
             }
-            a.add(counter);
-        }     
-        Iterator x=a.iterator();
-        while(x.hasNext()){
-            System.out.print(x.next()+" ");
+            s.add(c);
+        }
+        for (int x : s) {
+            System.out.println(x);  
         }
     }
     public static void main(String[] args) {

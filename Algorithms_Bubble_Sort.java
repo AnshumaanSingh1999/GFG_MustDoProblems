@@ -2,7 +2,7 @@
 Problem Solved Successfully
 */
 import java.util.Scanner;
-public class Algorithm_Bubble_Sort {
+public class Algorithms_Bubble_Sort {
     public static void bubbleSort(int arr[], int n)
     {
         int t=0;

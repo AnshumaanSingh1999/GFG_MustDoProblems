@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Arrays_Rotate_Array {
     static void rotateArr(int arr[], int d, int n)
     {
+        int k=0;
         ArrayList<Integer> ar=new ArrayList<>();
         for(int i=d;i<n;i++){
             ar.add(arr[i]);
@@ -11,7 +12,8 @@ public class Arrays_Rotate_Array {
             ar.add(arr[i]);  
         }
         for (int j : ar) {
-            System.out.print(j+" ");   
+            arr[k]=j;
+            k++;   
         }
     }
     public static void main(String[] args) {

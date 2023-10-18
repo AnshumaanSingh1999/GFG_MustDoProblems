@@ -1,46 +1,70 @@
+/*
+Problem Solved Successfully
+*/
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Arrays_Alternate_positive_and_negative_numbers {
     static void rearrange(int arr[], int n){
-        int counter=0;
-        ArrayList<Integer> a=new ArrayList<>();
-        ArrayList<Integer> b=new ArrayList<>();
+        ArrayList<Integer> pos=new ArrayList<>();
+        ArrayList<Integer> neg=new ArrayList<>();
         int k=0;
-        int narr[]=new int[n];
         for(int i=0;i<n;i++){
             if(arr[i]>=0){
-                a.add(arr[i]);
+                pos.add(arr[i]);
             }
             else if(arr[i]<0){
-                b.add(arr[i]);
+                neg.add(arr[i]);
             }
         } 
-        int ai=0;
-        int bi=0;
-        for(k=0;k<n;k++){
-            if(k==0 || k%2==0){
-                narr[k]=a.get(ai);
-                ai++;
-            }
-            else if(k%2!=0){
-                narr[k]=b.get(bi);
-                bi++;
+        int lp=pos.size();
+        int ln=neg.size();
+        if(lp>ln){
+            for(int i=0;i<lp;i++){
+                if(i<ln){
+                    arr[k]=pos.get(i);
+                    k++;
+                    arr[k]=neg.get(i);
+                    k++;
+                }
+                else if(i>=ln){
+                    arr[k]=pos.get(i);
+                    k++;
+                }
             }
         }
-        System.out.println(counter); 
+        else if(ln>lp){
+            for(int i=0;i<ln;i++){
+                if(i<lp){
+                    arr[k]=pos.get(i);
+                    k++;
+                    arr[k]=neg.get(i);
+                    k++;
+                }
+                else if(i>=lp){
+                    arr[k]=neg.get(i);
+                    k++;
+                }
+            }
+        } 
+        else if(ln==lp){
+            for(int i=0;i<ln;i++){
+                arr[k]=pos.get(i);
+                k++;
+                arr[k]=neg.get(i);
+                k++;
+            }
+        }    
         for(int j=0;j<n;j++){
-            System.out.println(narr[j]);
+            System.out.print(arr[j]+" ");
         }
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        // int n=sc.nextInt();
-        // int a[]=new int[n];
-        int n=10;
-        int a[]={-5, -2, 5, 2, 4, 7, 1, 8, 0, -8};
-        // for(int i=0;i<n;i++){
-        //     a[i]=sc.nextInt();
-        // }
+        int n=sc.nextInt();
+        int a[]=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=sc.nextInt();
+        }
         rearrange(a, n);   
     }   
 }

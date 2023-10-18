@@ -3,19 +3,15 @@ import java.util.Scanner;
 public class Arrays_Rotate_Array {
     static void rotateArr(int arr[], int d, int n)
     {
-        int x[]=new int[n];
-        int k=0;
-        int newi=d;
-        for(int i=d;i<=n-d;i++){
-            x[k]=arr[i]; 
-            k++;  
+        ArrayList<Integer> ar=new ArrayList<>();
+        for(int i=d;i<n;i++){
+            ar.add(arr[i]);
         }
         for(int i=0;i<d;i++){
-            x[k]=arr[i]; 
-            k++;  
+            ar.add(arr[i]);  
         }
-        for (int j : x) {
-            System.out.println(j);   
+        for (int j : ar) {
+            System.out.print(j+" ");   
         }
     }
     public static void main(String[] args) {

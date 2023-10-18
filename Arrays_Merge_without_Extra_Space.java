@@ -6,10 +6,6 @@ public class Arrays_Merge_without_Extra_Space {
     public static void merge(long arr1[], long arr2[], int n, int m) 
     {
         ArrayList<Long> alt=new ArrayList<>();
-        // ArrayList<Long> al1=new ArrayList<>();
-        // ArrayList<Long> al2=new ArrayList<>();
-        
-
         for(int i=0;i<n;i++){
             alt.add(arr1[i]);
         }
@@ -17,18 +13,9 @@ public class Arrays_Merge_without_Extra_Space {
             alt.add(arr2[j]);    
         }
         Collections.sort(alt);
-        // for(int i=0;i<n;i++){
-        //     al1.add(alt.get(i));
-        // }
-        // for(int j=n;j<m;j++){
-        //     al2.add(alt.get(j));    
-        // }
         for (long x : alt){
-            System.out.print(x+" ");
+            System.out.print((int)x+" ");
         }
-
-
-
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
@@ -44,7 +31,5 @@ public class Arrays_Merge_without_Extra_Space {
         }
         Arrays_Merge_without_Extra_Space obj=new Arrays_Merge_without_Extra_Space();
         merge(arr1, arr2, n, m);
-
     }
-    
 }

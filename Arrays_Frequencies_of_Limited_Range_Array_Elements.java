@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class Arrays_Frequencies_of_Limited_Range_Array_Elements {
     static void frequencyCount(int arr[], int N, int P){
+        int k=0;
         ArrayList<Integer> s=new ArrayList<>();
         for(int i=1;i<=P;i++){
             int c=0;
@@ -11,9 +12,14 @@ public class Arrays_Frequencies_of_Limited_Range_Array_Elements {
                 }
             }
             s.add(c);
+            System.out.println(c);
         }
         for (int x : s) {
-            System.out.println(x);  
+            arr[k]=x;  
+            k++;
+        }
+        for(int i=0;i<arr.length;i++){
+            System.out.println(arr[i]);
         }
     }
     public static void main(String[] args) {

@@ -26,15 +26,15 @@ public class Arrays_Merge_without_Extra_Space {
                 l++;
             }
         }
-        // for(int i=0;i<n;i++){
-        //     System.out.print(arr1[i]+" ");
-        // }
-        // for(int j=0;j<m;j++){
-        //     System.out.print(arr2[j]+" ");
-        // }
-        // for (long x : alt){
-        //     System.out.print((int)x+" ");
-        // }
+        for(int i=0;i<n;i++){
+            System.out.print(arr1[i]+" ");
+        }
+        for(int j=0;j<m;j++){
+            System.out.print(arr2[j]+" ");
+        }
+        for (long x : alt){
+            System.out.print((int)x+" ");
+        }
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);

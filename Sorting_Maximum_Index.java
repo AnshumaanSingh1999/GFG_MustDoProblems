@@ -1,30 +1,19 @@
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 public class Sorting_Maximum_Index {
     static int maxIndexDiff(int A[], int N) { 
-        ArrayList<Integer> a=new ArrayList<>();
-        int d=0;
-        int md=0;
-        int di=0;
-        int dj=0;
+        int max=0;
         for(int i=0;i<N;i++){
-            for(int j=i;j<N;j++){
-                if(A[i]<=A[j]){
+            for(int j=0;j<N;j++){
+                int d=0;
+                if(A[i]<=A[j] && i<=j){
                     d=j-i;
-                    a.add(d);
-
-                    // if(d>md){
-                    //     md=d;
-                    //     di=i;
-                    //     dj=j;
-                    // }
+                    if(d>max){
+                        max=d;
+                    }
                 }
             }
         }
-        Collections.sort(a);
-
-        return a.get(a.size()-1);
+        return max;
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
@@ -35,7 +24,5 @@ public class Sorting_Maximum_Index {
         }
         int r=maxIndexDiff(a, n);
         System.out.println(r);
-
-    }
-    
+    }   
 }

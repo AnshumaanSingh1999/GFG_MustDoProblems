@@ -1,17 +1,21 @@
 import java.util.*;
 public class Sorting_Triplets_with_sum_with_given_range {
     static int countTriplets(int Arr[], int N, int L, int R) {
-        int s=0;
         int c=0;
         for(int i=0;i<N;i++){
-            for(int j=i+1;j<N;j++){
+            for(int j=0;j<N;j++){
+                int s=0;
                 for(int k=0;k<N;k++){
-                    s=Arr[i]+Arr[j]+Arr[k];
-                }
-            }
-            if(s>=L && s<=R){
-                System.out.println(s);
-                c++;
+                    if(i!=j && j!=k && k!=i){
+                        s=Arr[i]+Arr[j]+Arr[k];
+                        if(s>=L && s<=R){
+                            System.out.println(s);
+                            System.out.println(Arr[i]+","+Arr[j]+","+Arr[k]);
+                            c++;
+                        }
+                    }
+                    
+                }   
             }
         }
         return c;

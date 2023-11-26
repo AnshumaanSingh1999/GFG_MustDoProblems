@@ -1,16 +1,30 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
-
 public class Hashing_Intersection_of_two_arrays {
     public static int NumberofElementsInIntersection(int a[], int b[], int n, int m) {
+        ArrayList<Integer> al=new ArrayList<>();
         int c=0;
-        for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++){
-                if(a[i]==b[j]){
+        Arrays.sort(a);
+        Arrays.sort(b);
+        if(n<=m){
+            for(int i=0;i<n;i++){
+                if(a[i]==b[i]){
+                    al.add(a[i]);
                     c++;
                 }
             }
         }
-        return c;
+        else if(m<n){
+            for(int j=0;j<m;j++){
+                if(a[j]==b[j]){
+                    al.add(a[j]);
+                    c++;
+                }
+            }  
+        }
+        System.out.println(al);
+        return al.size();
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);

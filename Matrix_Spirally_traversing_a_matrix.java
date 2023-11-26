@@ -1,6 +1,6 @@
 /*
 Problem Solved Successfully
-*/
+s*/
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Matrix_Spirally_traversing_a_matrix {

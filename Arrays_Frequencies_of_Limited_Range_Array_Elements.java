@@ -14,7 +14,6 @@ public class Arrays_Frequencies_of_Limited_Range_Array_Elements {
                 hm.put(arr[i], 1);
             }
         }
-        // System.out.println(hm);
         for(int i=0;i<N;i++){
             if(hm.containsKey(i+1)){
                 arr[i]=hm.get(i+1);
@@ -23,9 +22,9 @@ public class Arrays_Frequencies_of_Limited_Range_Array_Elements {
                 arr[i]=0;
             }
         }
-        // for(int x:arr){
-        //     System.out.println(x);
-        // }
+        for(int x:arr){
+            System.out.println(x);
+        }
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);

@@ -22,9 +22,6 @@ public class Arrays_Frequencies_of_Limited_Range_Array_Elements {
                 arr[i]=0;
             }
         }
-        for(int x:arr){
-            System.out.println(x);
-        }
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);

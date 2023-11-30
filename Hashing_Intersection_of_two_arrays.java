@@ -1,30 +1,27 @@
+/*
+Problem Solved Successfully
+*/
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
 public class Hashing_Intersection_of_two_arrays {
     public static int NumberofElementsInIntersection(int a[], int b[], int n, int m) {
-        ArrayList<Integer> al=new ArrayList<>();
+        HashSet<Integer> h1=new HashSet<>();
+        HashSet<Integer> h2=new HashSet<>();
         int c=0;
-        Arrays.sort(a);
-        Arrays.sort(b);
-        if(n<=m){
-            for(int i=0;i<n;i++){
-                if(a[i]==b[i]){
-                    al.add(a[i]);
-                    c++;
-                }
+        for(int i=0;i<n;i++){
+            h1.add(a[i]);
+        }
+        for(int i=0;i<m;i++){
+            h2.add(b[i]);
+        }
+        for(int x: h1){
+            if(h2.contains(x)){
+                c++;
             }
         }
-        else if(m<n){
-            for(int j=0;j<m;j++){
-                if(a[j]==b[j]){
-                    al.add(a[j]);
-                    c++;
-                }
-            }  
-        }
-        System.out.println(al);
-        return al.size();
+        return c;
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);

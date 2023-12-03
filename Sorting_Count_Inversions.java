@@ -7,9 +7,6 @@ public class Sorting_Count_Inversions {
         for(int i=0;i<l-1;i++){
             for(int j=i+1;j<l;j++){
                 if(a[i]>a[j]){
-                    temp=a[i];
-                    a[i]=a[j];
-                    a[j]=temp;
                     c++;
                 }
 

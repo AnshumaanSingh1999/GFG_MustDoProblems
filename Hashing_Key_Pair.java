@@ -1,27 +1,26 @@
+import java.util.HashMap;
 import java.util.Scanner;
 public class Hashing_Key_Pair {
-    static boolean test(int a[],int n,int s){
+    static boolean test(int arr[],int n,int x){
         boolean d=false;
-        int c=0;
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        int diff=0;
         for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
-                if(i==j){
-                    continue;
-                }
-                else{
-                    c=a[i]+a[j];
-                    if(c==s){
-                        d=true;
-                    } 
-                }
-            }    
+            diff=x-arr[i];
+            hm.put(arr[i], diff);
+        }
+        for(int i=0;i<n;i++){
+            diff=x-arr[i];
+            if(hm.containsKey(diff)){
+                d=true;
+            }
         }
         return d;
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        int s=sc.nextInt();
         int n=sc.nextInt();
+        int s=sc.nextInt();
         int a[]=new int[n];
         for(int i=0;i<n;i++){
             a[i]=sc.nextInt();

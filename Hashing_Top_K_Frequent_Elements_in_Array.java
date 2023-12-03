@@ -1,8 +1,19 @@
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Scanner;
 public class Hashing_Top_K_Frequent_Elements_in_Array {
     public int[] topK(int nums[],int k){
-        Arrays.sort(nums);
+        HashMap<Integer, Integer> h=new HashMap<>();
+        int c=0;
+        int l=nums.length;
+        for(int i=0;i<l;i++){
+            if(h.containsKey(nums[i])==false){
+                h.put(nums[i], 1);
+            }
+            else if(h.containsKey(nums[i])){
+                h.replace(nums[i], h.get(nums[i])+1);
+            }
+        }
+        System.out.println(h);
         return nums;   
     }
     public static void main(String[] args) {
